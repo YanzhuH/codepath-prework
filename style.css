@@ -1,0 +1,106 @@
+/* a minimalist set of CSS resets */
+
+
+/* adjust typography defaults */
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+  background-color: slategrey;
+  color: white; 
+}
+
+h1 {
+  font-family: verdana, arial, sans-serif; 
+}
+
+#clockdiv {
+    font-size: 1em;
+    font-weight: 10;
+    color: white;
+    padding: 1px;
+    width: 500px;
+    color: black;
+
+}
+
+#clockdiv div {
+    display: inline-block;
+    min-width: 60px;
+    padding: 10px;
+    background: lavender;
+    border-radius: 10px;
+    border: 2px solid #030d52;
+    margin: 2px;
+}
+
+button {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#gameButtonArea > button {
+  width:200px;
+  height:200px;
+  margin:2px;
+}
+
+#button1 {
+    background: lightgreen;
+}
+
+#button1:active, #button1.lit {
+    background:green;
+}
+
+#button2 {
+    background: lightblue;
+}
+
+#button2:active, #button2.lit {
+    background:blue;
+}
+
+#button3 {
+    background: pink;
+}
+
+#button3:active, #button3.lit {
+    background:red;
+}
+
+#button4 {
+    background: lightyellow;
+}
+
+#button4:active, #button4.lit {
+    background:yellow;
+}
+
+#button5 {
+    background: grey;
+}
+
+#button5:active, #button5.lit {
+    background:black;
+}
+
+#button6 {
+    background: lightcoral;
+}
+
+#button6:active, #button6.lit {
+    background:indianred;
+}
+
+#button7 {
+    background: sandybrown;
+}
+
+#button7:active, #button7.lit {
+    background:saddlebrown;
+}
+
+
+.hidden {
+  display: none;
+}
