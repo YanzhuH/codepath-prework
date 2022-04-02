@@ -23,24 +23,30 @@ var guessCounter = 0;
 //optional - Give the player 3 strikes
 var mistake = 2;
 //optional - clock ticking - 1 minute countdown
-var deadline = new Date(Date.parse(new Date()) + 0.5 * 60 * 1000);
-
+var deadline = 0;
+var timeinterval;
 
 function startGame(){
   //initialize game variables
   progress = 0;
   gamePlaying = true;
   mistake = 0;
+  clueHoldTime = 1000;
   // swap the Start and Stop buttons
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("stopBtn").classList.remove("hidden");
   playClueSequence();
   //initialize clock
-  initializeClock("clockdiv", deadline);
+  if(deadline <= 0 || deadline != new Date(Date.parse(new Date()) + 1 * 60 * 1000)) {
+    deadline = new Date(Date.parse(new Date()) + 1 * 60 * 1000);
+    initializeClock("clockdiv", deadline);
+
+  }
 }
 
 function stopGame() {
   gamePlaying = false;
+  clearInterval(timeinterval);
   document.getElementById("startBtn").classList.remove("hidden");
   document.getElementById("stopBtn").classList.add("hidden");
 }
@@ -152,20 +158,18 @@ function guess(btn){
     } else {
       mistake++;
       console.log("mistake: " + mistake);
+      alert("You have a mistake. You have " + (3 - mistake) + " chances.");
       if(mistake > 2) {
         loseGame();
       } else {
         if(guessCounter == progress){
           if(progress == pattern.length - 1){
-            //GAME OVER: WIN!
             winGame();
           }else{
-            //Pattern correct. Add next segment
             progress++;
             playClueSequence();
           }
         }else{
-          //so far so good... check the next guess
           guessCounter++;
         }
       }
@@ -201,11 +205,10 @@ function initializeClock(id, endtime) {
     if (t.total <= 0) {
       clearInterval(timeinterval);
     }
-
   }
 
   updateClock();
-  var timeinterval = setInterval(updateClock, 1000);
+  timeinterval = setInterval(updateClock, 1000);
 }
 
 
