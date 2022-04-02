@@ -6,7 +6,7 @@ Submitted by: **Yanzhu Huang**
 
 Time spent: **5** hours spent in total
 
-Link to project: https://github.com/YanzhuH/codepath-prework.git
+Link to project: https://glitch.com/edit/#!/juvenile-pickled-hollyhock
 
 ## Required Functionality
 
